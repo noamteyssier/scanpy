@@ -272,7 +272,7 @@ def embedding(
 
         # Order points
         order = slice(None)
-        if sort_order is True and value_to_plot is not None and categorical is False:
+        if sort_order is True and value_to_plot is not None and categorical is False and color_vector.dtype != bool:
             # Higher values plotted on top, null values on bottom
             order = np.argsort(-color_vector, kind="stable")[::-1]
         elif sort_order and categorical:
